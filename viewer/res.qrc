@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/back.png</file>
+        <file>icons/cross.png</file>
+        <file>icons/full.png</file>
+        <file>icons/max.png</file>
+        <file>icons/min.png</file>
+        <file>icons/next.png</file>
+        <file>icons/picture.png</file>
+        <file>icons/restore.png</file>
+    </qresource>
+</RCC>
