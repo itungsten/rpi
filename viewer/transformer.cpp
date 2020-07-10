@@ -12,9 +12,6 @@ Transformer::Transformer()
 {
 
 }
-int Transformer::classifier(){
-    return 0;
-}
 
 void Transformer::transform(QString path){
     info.setFile(path);
@@ -22,7 +19,10 @@ void Transformer::transform(QString path){
     strcpy(baseName,info.baseName().toStdString().c_str());
     char fileName[BUF_SIZE];
     strcpy(fileName,info.fileName().toStdString().c_str());
-    char * argv[]={PYTHONPATH,CMDBASEPATH,WAREHOUSEPATH,baseName,fileName,"10",nullptr};
+    //baseName和fileName都是为了调用posix_spawn做的准备
+
+    char * argv[]={PYTHONPATH,TRANSFORMPATH,WAREHOUSEPATH,baseName,fileName,"10",nullptr};
     char * env[]={"LD_PRELOAD=/usr/lib/arm-linux-gnueabihf/libatomic.so.1",nullptr};
-    posix_spawn(nullptr,PYTHONPATH,nullptr,nullptr,argv,env);
+    posix_spawn(nullptr,PYTHONPATH,nullptr,nullptr,argv,env);//启动一个子进程
+    //argv 和 env 的作用是提供程序参数(argv)和环境变量(env)
 }

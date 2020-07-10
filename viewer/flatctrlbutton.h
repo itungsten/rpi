@@ -12,11 +12,11 @@ class FlatCtrlButton : public QWidget
     Q_OBJECT
 //有这个宏就可以使用信号槽机制
 public:
-    void mouseReleaseEvent(QMouseEvent *event);
-    void enterEvent(QEvent *ev);
-    void leaveEvent(QEvent *ev);
+    void mouseReleaseEvent(QMouseEvent *event); //similar to click
+    void enterEvent(QEvent *ev); //appear
+    void leaveEvent(QEvent *ev); //disappear
     explicit FlatCtrlButton(QWidget *parent = nullptr);
-    //nullptr就是NULL，explicit防止隐式调用构造函数进行类型转换
+    //explicit防止隐式调用构造函数
     ~FlatCtrlButton();
 
 
@@ -24,7 +24,7 @@ public:
 
 
 signals:
-    void signalClicked();//信号娘：哎呦，我被戳了一下（daze
+    void signalClicked();
 };
 
 #endif // flatCTRLBUTTON_H

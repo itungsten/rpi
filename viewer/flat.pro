@@ -48,11 +48,3 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     res.qrc
-
-#win32: LIBS += -L$$PWD/../../../anaconda/envs/t031/libs/ -lpython37
-
-#INCLUDEPATH += $$PWD/../../../anaconda/envs/t031/include
-#DEPENDPATH += $$PWD/../../../anaconda/envs/t031/include
-
-#win32:!win32-g++: PRE_TARGETDEPS += $$PWD/../../../anaconda/envs/t031/libs/python37.lib
-#else:win32-g++: PRE_TARGETDEPS += $$PWD/../../../anaconda/envs/t031/libs/libpython37.a
